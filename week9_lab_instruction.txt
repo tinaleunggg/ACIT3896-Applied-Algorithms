@@ -1,0 +1,75 @@
+Okay, for this lab, let's do something a bit different. Let's create fractals. How pretty!
+
+First of all, I want to warn you not to spoil yourself. If you read any Python solutions, you'll prevent yourself from learning anything. You have been warned! It's slightly less bad reading solutions in other languages, because then you have to actively struggle to figure out what they mean, but avoid that too if you can.
+Do What
+
+Okay.
+
+We'll start with the Koch Snowflake.
+
+Go look at the pictures in the Wikpedia article. Reading the text isn't necessary for what we're doing here, it's all very mathematical and irrelevant to our purpose. Just look at the pictures (including the animations) to understand what we're trying to build.
+
+Here, this is the only useful part of the article:
+
+    The Koch snowflake can be built up iteratively, in a sequence of stages. The first stage is an equilateral triangle, and each successive stage is formed by adding outward bends to each side of the previous stage, making smaller equilateral triangles.
+
+Interestingly, although they say "iteratively", the thing they mean, in computing terms, is "recursively".
+Turtle Graphics
+
+BUT HOW.
+
+Let's draw this with Turtle Graphics. This is a toy for learning programming that comes with the Python standard library, import turtle.
+
+Here's the docs, you'll want them later, so here's the link, but you can probably just get started and then read the docs later. https://docs.python.org/3/library/turtle.html
+
+Here is some code to draw a triangle.
+
+import turtle
+t = turtle.Turtle()
+
+t.forward(100)
+t.right(120)
+t.forward(100)
+t.right(120)
+t.forward(100)
+t.right(120)
+
+Depending on how your Python is installed, you might be able to just run that program. If not, you can run it in this Python Sandbox: https://www.pythonsandbox.com/turtle
+
+There's a lot more to turtle graphics, but you don't need anything else, except maybe t.speed(10) to make it animate faster, or t.speed(0) to make it animate infinite-speed.
+Do What, Though
+
+At the 1st level, a Koch snowflake is 3 lines, each with a 120 degree right turn.
+
+At the 2nd level, replace every line with this:
+
+    1/3-length line
+    60 deg left turn
+    1/3-length line
+    120 deg right turn
+    1/3-length line
+    60 deg left turn
+    1/3-length line
+
+At the 3rd level, do that again.
+
+At the 4th level, do that again.
+
+It's very recursive, do you see? But! I have not explained what the base case is. You will have to be creative to figure it out.
+
+Play around. See if you can figure out how to make shapes in turtle-graphics, and how to draw a beautiful Koch snowflake. Without infinite-looping.
+
+A Hint
+
+I'm not sure if this hint is helpful or anti-helpful, so read it at your own risk.
+
+If you draw a line, and then try to replace that line after you draw it, it's too late; the line is already drawn.  Instead, you need to replace it in your plan, before you even draw it.
+Extensions
+
+You could extend what you have learned here to make any of the following:
+
+    https://en.wikipedia.org/wiki/Peano_curve
+    https://en.wikipedia.org/wiki/Sierpinski_gasket
+        for this one you might benefit from learnign a few more turtle-drawing tools, such as penup, pendown, teleport, etc
+    https://en.wikipedia.org/wiki/Vicsek_fractal
+    etc
